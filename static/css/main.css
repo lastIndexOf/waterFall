@@ -10,11 +10,22 @@ ul {
   font-size: 0;
   position: relative;
 }
+#app .wrapper.clearfix::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  clear: both;
+}
 #app .wrapper .item {
   float: left;
   width: 20%;
   padding: 4px;
   box-sizing: border-box;
+  transition: all 0.4s;
 }
 #app .wrapper .item .img-wrapper {
   padding: 4px;
@@ -22,4 +33,12 @@ ul {
 }
 #app .wrapper .item .img-wrapper img {
   width: 100%;
+}
+#app .loading {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+}
+#app .loading h3 {
+  text-align: center;
 }

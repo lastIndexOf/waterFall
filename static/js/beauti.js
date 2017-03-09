@@ -2,15 +2,20 @@
 	const request = window.superagent
 	let INDEX = 0
 		, key = true
+		, NO = 7
 
-	new Vue({
+window.app = new Vue({
 		data() {
 			return {
-				images: []
+				images: [],
+				isShow: false
+				// heights: []
 			}
 		},
 		computed: {
-
+			scrollTop () {
+				return document.body.scrollTop
+			}
 		},
 		methods: {
 			_init() {
@@ -75,11 +80,12 @@
 					if (scrollTop + height >= min) {
 						key = false
 						INDEX++
+						self.isShow = true
 						request.get('/api/img')
-							.query('num=40&no=7&skip=' + INDEX)
+							.query(`no=${ NO }&skip=${ INDEX }`)
 							.end((err, res) => {
 								if (err) console.log(err)
-
+								
 								self.images = self.images.concat(res.body.imgs)
 								self.$nextTick(() => {
 									let promises = []
@@ -91,8 +97,16 @@
 									
 									Promise.all(promises)
 										.then(() => {
+											self.isShow = false
 											self._init()
 										})
+									
+									if (res.body.imgs.length < 20) {
+										if (NO !== 0) {
+											NO--
+											INDEX = 0
+										}
+									}
 								})
 								key = true
 							})
@@ -105,7 +119,7 @@
 			const self = this
 
 			request.get('/api/img')
-				.query('num=40&no=7&skip=0')
+				.query('no=7&skip=0')
 				.end((err, res) => {
 					if (err) console.log(err)
 	
@@ -120,7 +134,6 @@
 							promises.push(self._loadImage(imgs[i]))
 						}
 						
-						console.log(promises)
 						Promise.all(promises)
 							.then(() => {
 								self._init()

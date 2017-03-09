@@ -8,13 +8,17 @@
 </head>
 <body>
 	<div id="app">
-		<ul class="wrapper">
-			<li class="item" v-for="image of images">
+		<ul class="wrapper clearfix">
+			<li class="item" v-for="(image, index) of images" :ref="index">
+				<p>{{ $refs }}</p>
 				<div class="img-wrapper">
 					<img :data-src="image">
 				</div>	
 			</li>
 		</ul>
+		<div class="loading" v-show="isShow">
+			<h3>加载中...</h3>
+		</div>
 	</div>
 </body>
 <script src="/static/js/superagent/superagent.js"></script>
