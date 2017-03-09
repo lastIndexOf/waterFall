@@ -12,4 +12,8 @@
 
 > node app
 
-....
+### open the browser
+
+> localhost:3333
+
+### drag site down to loading more ....
