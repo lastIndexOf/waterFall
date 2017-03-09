@@ -1,15 +1,14 @@
 ;(() => {
 	const request = window.superagent
 	let INDEX = 0
-		, key = true
 		, NO = 7
+		, key = true
 
 	window.app = new Vue({
 		data() {
 			return {
 				images: [],
 				isShow: false
-				// heights: []
 			}
 		},
 		computed: {
@@ -38,11 +37,6 @@
 								, index = self.heights.findIndex(e => e === min)
 								, height = imgs[i].offsetHeight
 
-						// imgs[i].style = {
-						// 	position: 'absolute',
-						// 	top: `${ min }px`,
-						// 	left: `${ 20 * index }%`
-						// }
 						imgs[i].style.position = 'absolute'
 						imgs[i].style.top = `${ min }px`
 						imgs[i].style.left = `${ 20 * index }%`
@@ -74,7 +68,7 @@
 										|| document.body.clientHeight
 						, scrollTop = document.body.scrollTop
 						, min = Math.min(...self.heights)
-						
+				
 				for (let i in Doms) {
 					let client = Doms[i][0].getBoundingClientRect()
 
@@ -149,6 +143,9 @@
 									self._init()
 								}
 								window.onscroll = self._scroll
+								document.querySelector('.item')
+									.style
+									.opacity = 1.0
 								self._scroll()
 							})
 					})
