@@ -25,7 +25,7 @@ ul {
   width: 20%;
   padding: 4px;
   box-sizing: border-box;
-  transition: all 0.4s;
+  transition: all 0.8s;
 }
 #app .wrapper .item .img-wrapper {
   padding: 4px;

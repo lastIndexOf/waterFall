@@ -84,7 +84,7 @@
 				}
 
 				if (key) {
-					if (scrollTop + height >= min) {
+					if (scrollTop + height >= min * .8) {
 						key = false
 						INDEX++
 						self.isShow = true
@@ -149,6 +149,7 @@
 									self._init()
 								}
 								window.onscroll = self._scroll
+								self._scroll()
 							})
 					})
 				})
