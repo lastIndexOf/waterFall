@@ -24,6 +24,24 @@ router
 	.get('/api/k1', async ctx => {
 		ctx.body = { name: 'zfk' }
 	})
+	.get('/api/img', async ctx => {
+		const query = ctx.request.query
+				, skip = query.skip - 0
+				, no = query.no - 1
+				, skipNum = skip * 20
+				, dirs = await fs.readdirSync('./beauties')
+				, logs = await fs.readdirSync('./beauties/' + dirs[no])
+
+		try {
+			let imgs = logs.slice(skipNum, skipNum + 20)
+			
+			for (let i = 0, len = imgs.length; i < len; i++) {
+				imgs[i] = `/public/${ dirs[no] }/${ imgs[i] }`
+			}
+
+			ctx.body = { imgs }
+		} catch (e) {}
+	})
 
 app
 	.use(router.routes())

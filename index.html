@@ -8,14 +8,16 @@
 </head>
 <body>
 	<div id="app">
-		<ul class="wrapper" v-if="images.length">
+		<ul class="wrapper">
 			<li class="item" v-for="image of images">
-				<img :src="image.src">	
+				<div class="img-wrapper">
+					<img :data-src="image">
+				</div>	
 			</li>
 		</ul>
 	</div>
 </body>
-<script src="/static/js/vue/dist/vue.min.js"></script>
 <script src="/static/js/superagent/superagent.js"></script>
+<script src="/static/js/vue/dist/vue.min.js"></script>
 <script src="/static/js/beauti.js"></script>
 </html>
