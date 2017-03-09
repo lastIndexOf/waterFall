@@ -7,8 +7,15 @@
 	<link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-	<h1>hello, koa2</h1>
+	<div id="app">
+		<ul class="wrapper" v-if="images.length">
+			<li class="item" v-for="image of images">
+				<img :src="image.src">	
+			</li>
+		</ul>
+	</div>
 </body>
-<!-- <script src="./static/js/beauti.js"></script> -->
-<!-- <script src="./n	ode_modules/vue/dist/vue.min.js"></script> -->
+<script src="/static/js/vue/dist/vue.min.js"></script>
+<script src="/static/js/superagent/superagent.js"></script>
+<script src="/static/js/beauti.js"></script>
 </html>
