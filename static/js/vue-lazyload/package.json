@@ -1,0 +1,100 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "vue-lazyload",
+        "scope": null,
+        "escapedName": "vue-lazyload",
+        "name": "vue-lazyload",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\node\\Beauties"
+    ]
+  ],
+  "_from": "vue-lazyload@latest",
+  "_id": "vue-lazyload@1.0.0-rc12",
+  "_inCache": true,
+  "_location": "/vue-lazyload",
+  "_nodeVersion": "6.2.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/vue-lazyload-1.0.0-rc12.tgz_1488166006908_0.6063419925048947"
+  },
+  "_npmUser": {
+    "name": "imawe",
+    "email": "hilongjw@qq.com"
+  },
+  "_npmVersion": "3.9.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "vue-lazyload",
+    "scope": null,
+    "escapedName": "vue-lazyload",
+    "name": "vue-lazyload",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vue-lazyload/-/vue-lazyload-1.0.0-rc12.tgz",
+  "_shasum": "6d846bad6b935802a9c7abcf7d337ea5f2995272",
+  "_shrinkwrap": null,
+  "_spec": "vue-lazyload",
+  "_where": "D:\\node\\Beauties",
+  "author": {
+    "name": "Awe",
+    "email": "hilongjw@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/hilongjw/vue-lazyload/issues"
+  },
+  "dependencies": {},
+  "description": "Vue module for lazy-loading images in your vue.js applications.",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "rollup": "^0.35.10",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "6d846bad6b935802a9c7abcf7d337ea5f2995272",
+    "tarball": "https://registry.npmjs.org/vue-lazyload/-/vue-lazyload-1.0.0-rc12.tgz"
+  },
+  "gitHead": "69b08701fb65b9b2ce8a5c6250984a6b01db15fb",
+  "homepage": "https://github.com/hilongjw/vue-lazyload#readme",
+  "keywords": [
+    "vue-lazyload",
+    "vue",
+    "lazyload",
+    "vue-directive"
+  ],
+  "license": "MIT",
+  "main": "vue-lazyload.js",
+  "maintainers": [
+    {
+      "name": "imawe",
+      "email": "hilongjw@qq.com"
+    }
+  ],
+  "name": "vue-lazyload",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hilongjw/vue-lazyload.git"
+  },
+  "scripts": {
+    "start": "node build"
+  },
+  "version": "1.0.0-rc12"
+}

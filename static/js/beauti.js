@@ -4,7 +4,7 @@
 		, key = true
 		, NO = 7
 
-window.app = new Vue({
+	window.app = new Vue({
 		data() {
 			return {
 				images: [],
@@ -68,19 +68,27 @@ window.app = new Vue({
 			},
 			_scroll() {
 				const self = this
-				const height = window.innerHeight
+				const Doms = self.$refs
+						, height = window.innerHeight
 										|| document.documentElement.clientHeight
 										|| document.body.clientHeight
 						, scrollTop = document.body.scrollTop
 						, min = Math.min(...self.heights)
+						
+				for (let i in Doms) {
+					let client = Doms[i][0].getBoundingClientRect()
 
-				
-				
+					if (client.top <= height) {
+						Doms[i][0].style.opacity = 1.0
+					}
+				}
+
 				if (key) {
 					if (scrollTop + height >= min) {
 						key = false
 						INDEX++
 						self.isShow = true
+
 						request.get('/api/img')
 							.query(`no=${ NO }&skip=${ INDEX }`)
 							.end((err, res) => {

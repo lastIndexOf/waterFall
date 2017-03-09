@@ -9,8 +9,7 @@
 <body>
 	<div id="app">
 		<ul class="wrapper clearfix">
-			<li class="item" v-for="(image, index) of images" :ref="index">
-				<p>{{ $refs }}</p>
+			<li class="item" v-for="(image, index) of images" style="opacity: 0;" :ref="index" >
 				<div class="img-wrapper">
 					<img :data-src="image">
 				</div>	
@@ -23,5 +22,6 @@
 </body>
 <script src="/static/js/superagent/superagent.js"></script>
 <script src="/static/js/vue/dist/vue.min.js"></script>
+<!-- <script src="/static/js/vue-lazyload/vue-lazyload.js"></script> -->
 <script src="/static/js/beauti.js"></script>
 </html>
