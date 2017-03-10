@@ -8,7 +8,8 @@
 		data() {
 			return {
 				images: [],
-				isShow: false
+				isShow: false,
+				heights: []
 			}
 		},
 		computed: {},
@@ -89,17 +90,15 @@
 									let promises = []
 									let imgs = document.querySelectorAll('.item')
 
-									for (let i = 0, len = imgs.length; i < len; i++) {
-										promises.push(self._loadImage(imgs[i]))
-									}
-									
+									imgs.forEach(img => {
+										promises.push(self._loadImage(img))
+									})
+
 									Promise.all(promises)
 										.then(() => {
 											self.isShow = false
 											self._init()
-											self.$nextTick(() => {
-												self._scroll()
-											})
+											self._scroll()
 										})
 
 									
@@ -132,9 +131,9 @@
 					self.$nextTick(() => {
 						let imgs = document.querySelectorAll('.item')
 
-						for (let i = 0, len = imgs.length; i < len; i++) {
-							promises.push(self._loadImage(imgs[i]))
-						}
+						imgs.forEach(img => {
+							promises.push(self._loadImage(img))
+						})
 						
 						Promise.all(promises)
 							.then(() => {
