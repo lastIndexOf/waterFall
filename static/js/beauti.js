@@ -4,25 +4,21 @@
 		, NO = 7
 		, key = true
 
-	window.app = new Vue({
+	new Vue({
 		data() {
 			return {
 				images: [],
 				isShow: false
 			}
 		},
-		computed: {
-			scrollTop () {
-				return document.body.scrollTop
-			}
-		},
+		computed: {},
 		methods: {
 			_init() {
 				const self = this
-
 				const width = window.innerWidth
 										|| document.documentElement.clientWidth
 										|| document.body.clientWidth
+
 				let imgs = document.querySelectorAll('.item')
 				
 				self.heights = [] 
@@ -78,7 +74,7 @@
 				}
 
 				if (key) {
-					if (scrollTop + height >= min * .8) {
+					if (scrollTop + height >= min * .95) {
 						key = false
 						INDEX++
 						self.isShow = true
@@ -101,7 +97,11 @@
 										.then(() => {
 											self.isShow = false
 											self._init()
+											self.$nextTick(() => {
+												self._scroll()
+											})
 										})
+
 									
 									if (res.body.imgs.length < 20) {
 										if (NO !== 0) {

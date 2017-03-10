@@ -10,7 +10,7 @@ const Koa = require('koa')
 	
 app.use(views(__dirname + '/views', {
 	map: {
-		html: 'pug',
+		html: 'pug'
 	},
 	extension: 'pug'
 }))
