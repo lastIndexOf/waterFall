@@ -1,5 +1,9 @@
 # waterFall
 
+### need Node v7.6.0 + (async/await required)
+
+需要nodev7.6.0以上版本(需要async/await)支持
+
 ### install rely
 #### 安装依赖
 
