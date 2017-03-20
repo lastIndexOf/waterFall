@@ -98,7 +98,6 @@
 										.then(() => {
 											self.isShow = false
 											self._init()
-											self._scroll()
 										})
 
 									
